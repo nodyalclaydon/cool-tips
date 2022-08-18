@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style/cool-tips.css" />
+    <link rel="stylesheet" href="./style/styles.css" />
 </head>
 <body>
-    <div style="display: flex; justify-content: center; align-content: center;">
-    <button>Test</button>
-</div>
+    <div class="container">
+        <button class="cool-tip" cool-tip="this is what the default tooltip looks like">Default</button>
+        <button class="cool-tip" cool-tip="top positioned cool-tip" cool-tip-position="top">top</button>
+        <button class="cool-tip" cool-tip="right positioned cool-tip with wrapping text" cool-tip-position="right">right</button>
+        <button class="cool-tip ct-200" cool-tip="bottom positioned cool-tip" cool-tip-position="bottom">bottom</button>
+        <button class="cool-tip" cool-tip="left positioned cool-tip" cool-tip-position="left">left</button>
+    </div>
 </body>
 </html>

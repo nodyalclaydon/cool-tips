@@ -1,0 +1,26 @@
+:root {
+    --cool-tip-bk: #2eb8b3;
+    --cool-tip-color: #4f4e4e;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container button {
+    padding: 6px 12px;
+    min-width: 100px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: #8f54e8;
+    color: white;
+    margin: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+}

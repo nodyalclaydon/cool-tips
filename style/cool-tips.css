@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+.cool-tip {
+    position: relative;
+}
+/* Cool-Tip Arrows */
+.cool-tip:hover::before {
+    content: "";
+    position: absolute;
+    border: 8px solid transparent;
+    width: 0px;
+    height: 0px;
+    animation: show 150ms linear;
+}
+
+.cool-tip:hover::before, /* -- default -- */
+.cool-tip[cool-tip-position="top"]:hover::before {
+    border-color: transparent;
+    border-top-color: var(--cool-tip-bk, #606060);
+    top: -8px;
+    left: 50%;
+    right: unset;
+    bottom: unset;
+    transform: translateX(-50%);
+}
+
+.cool-tip[cool-tip-position="right"]:hover::before {
+    border-color: transparent;
+    border-right-color: var(--cool-tip-bk, #606060);
+    top: 50%;
+    right: -8px;
+    bottom: unset;
+    left: unset;
+    transform: translateY(-50%);
+}
+
+.cool-tip[cool-tip-position="bottom"]:hover::before {
+    border-color: transparent;
+    border-bottom-color: var(--cool-tip-bk, #606060);
+    bottom: -8px;
+    left: 50%;
+    top: unset;
+    right: unset;
+    transform: translateX(-50%);
+}
+
+.cool-tip[cool-tip-position="left"]:hover::before {
+    border-color: transparent;
+    border-left-color: var(--cool-tip-bk, #606060);
+    top: 50%;
+    left: -8px;
+    bottom: unset;
+    right: unset;
+    transform: translateY(-50%);
+}
+/* Cool-Tip Text */
+.cool-tip:hover::after {
+    content: attr(cool-tip);
+    position: absolute;
+    color: var(--cool-tip-color, #ffffff);
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    width: 150px;
+    background-color: var(--cool-tip-bk, #606060);
+    padding: 6px 12px;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: none;
+    animation: show 150ms linear;
+}
+
+.cool-tip.ct-100::after { width: 100px; }
+.cool-tip.ct-150::after { width: 150px; } /* -- default -- */
+.cool-tip.ct-200::after { width: 200px; }
+.cool-tip.ct-250::after { width: 250px; }
+.cool-tip.ct-300::after { width: 300px; }
+.cool-tip.ct-350::after { width: 350px; }
+.cool-tip.ct-400::after { width: 400px; }
+.cool-tip.ct-450::after { width: 450px; }
+.cool-tip.ct-500::after { width: 500px; }
+
+.cool-tip:hover::after, /* -- default -- */
+.cool-tip[cool-tip-position="top"]:hover::after {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    top: unset;
+    right: unset;
+    transform: translate(-50%, 0);
+}
+
+.cool-tip[cool-tip-position="right"]:hover::after {
+    top: 50%;
+    left: calc(100% + 8px);
+    bottom: unset;
+    right: unset;
+    transform: translate(0, -50%);
+}
+
+.cool-tip[cool-tip-position="bottom"]:hover::after {
+    top: calc(100% + 8px);
+    left: 50%;
+    bottom: unset;
+    right: unset;
+    transform: translate(-50%, 0);
+}
+
+.cool-tip[cool-tip-position="left"]:hover::after {
+    top: 50%;
+    right: calc(100% + 8px);
+    bottom: unset;
+    left: unset;
+    transform: translate(0, -50%);
+}
+
+/* Animation */
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
